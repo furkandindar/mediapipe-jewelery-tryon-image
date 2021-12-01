@@ -25,6 +25,7 @@ const Model = () => {
 
 var landmark_x = -100;
 var landmark_y = -100;
+imgSource = "https://thumbs.dreamstime.com/b/back-side-woman-hand-showing-five-count-36194782.jpg";
 
 function App() {
 
@@ -77,7 +78,7 @@ function App() {
     <Grid container direction="column">
       <Grid item container direction="row" xs={12} sm={12} md={12} lg={12} xl={12}>
         <Grid item xs={0} sm={2} md={3} lg={3} xl={4}></Grid>
-        <Grid item xs={12} sm={8} md={6} lg={6} xl={4}><img ref={imgRef} src="./woman_hand.jpeg" alt="hand"/></Grid>
+        <Grid item xs={12} sm={8} md={6} lg={6} xl={4}><img ref={imgRef} src={imgSource} alt="hand"/></Grid>
         <Grid item item xs={0} sm={2} md={3} lg={3} xl={4}></Grid>
       </Grid>
     </Grid>

@@ -1,0 +1,11 @@
+.outer-div{
+  position: relative;
+}
+
+.canvas-wrapper{
+  position: absolute;
+}
+
+.img-wrapper{
+  position: absolute;
+}

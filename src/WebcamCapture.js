@@ -29,6 +29,8 @@ const Model = () => {
 
 const videoConstraints = {
     facingMode: "environment",
+    width: 720,
+    height: 640,
 }
 
 function WebcamCapture() {

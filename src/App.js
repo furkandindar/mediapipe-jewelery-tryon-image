@@ -47,15 +47,11 @@ function App() {
 
 
   return (
-      <Container>
         <Grid container>
-          <Grid item xs={0} sm={2} md={3} lg={4} xl={4}></Grid>
-          <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
+          <Grid item>
                 <WebcamCapture></WebcamCapture>
           </Grid>
-          <Grid item xs={0} sm={2} md={3} lg={4} xl={4}></Grid>
         </Grid>
-      </Container>
   );
 }
 

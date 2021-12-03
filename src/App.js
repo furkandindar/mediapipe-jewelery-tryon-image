@@ -47,13 +47,14 @@ function App() {
 
 
   return (
-    <Box style={{overflow: 'auto'}}>
-        <Grid container>
+        <Grid container style={{
+          margin: 0,
+          width: '100%',
+        }}>
           <Grid item>
                 <WebcamCapture></WebcamCapture>
           </Grid>
         </Grid>
-    </Box>
   );
 }
 

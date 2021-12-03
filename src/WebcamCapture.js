@@ -29,7 +29,7 @@ const Model = () => {
 
 const videoConstraints = {
     facingMode: "environment",
-    width: 720,
+    width: 360,
     height: 640,
 }
 
@@ -60,6 +60,8 @@ function WebcamCapture() {
                     audio={false}
                     screenshotFormat="image/jpeg"
                     videoConstraints={videoConstraints}
+                    width={videoConstraints.width}
+                    height={videoConstraints.height}
                 />
                 <RadioButtonUncheckedIcon
                     className="webcamCapture__CaptureButton"

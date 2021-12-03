@@ -21,7 +21,9 @@
 
 .webcamCapture__CloseButton{
     position: absolute;
-    left: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
     cursor: pointer;
     color: white;
 }

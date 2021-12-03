@@ -1,0 +1,27 @@
+.webcamCapture {
+    position: relative;
+}
+
+.preview{
+    position: relative;
+}
+
+.hide{
+    display: none;
+}
+
+.webcamCapture__CaptureButton{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    color: white;
+}
+
+.webcamCapture__CloseButton{
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    color: white;
+}

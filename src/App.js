@@ -49,8 +49,8 @@ function App() {
   return (
     <Grid container direction="column">
       <Grid item container direction="row" xs={12} sm={12} md={12} lg={12} xl={12}>
-        <Grid item xs={0} sm={2} md={3} lg={3} xl={4}></Grid>
-        <Grid item xs={12} sm={8} md={6} lg={6} xl={4}>
+        <Grid item xs={3} sm={3} md={3} lg={3} xl={4}></Grid>
+        <Grid item xs={6} sm={6} md={6} lg={6} xl={4}>
               {/* <img ref={imgRef} src="woman_hand.jpeg" style={{width:"480px", height:"640px", position:"absolute"}} alt="hand"/>
               <Canvas style={{width:"480px", height:"640px", position:"absolute"}} ref={canvasRef}>
                 <Suspense fallback={null}>
@@ -59,7 +59,7 @@ function App() {
               </Canvas> */}
               <WebcamCapture></WebcamCapture>
         </Grid>
-        <Grid item xs={0} sm={2} md={3} lg={3} xl={4}></Grid>
+        <Grid item xs={3} sm={3} md={3} lg={3} xl={4}></Grid>
       </Grid>
     </Grid>
   );

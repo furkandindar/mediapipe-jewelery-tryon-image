@@ -1,5 +1,5 @@
 import './App.css';
-import { Grid, Container } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 import WebcamCapture from "./WebcamCapture";
 
 
@@ -47,11 +47,13 @@ function App() {
 
 
   return (
+    <Box style={{overflow: 'auto'}}>
         <Grid container>
           <Grid item>
                 <WebcamCapture></WebcamCapture>
           </Grid>
         </Grid>
+    </Box>
   );
 }
 

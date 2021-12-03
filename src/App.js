@@ -47,10 +47,7 @@ function App() {
 
 
   return (
-        <Grid container style={{
-          margin: 0,
-          width: '100%',
-        }}>
+        <Grid container>
           <Grid item>
                 <WebcamCapture></WebcamCapture>
           </Grid>

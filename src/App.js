@@ -1,5 +1,5 @@
 import './App.css';
-import { Grid } from '@mui/material';
+import { Grid, Container } from '@mui/material';
 import WebcamCapture from "./WebcamCapture";
 
 
@@ -47,19 +47,15 @@ function App() {
 
 
   return (
-    // <Grid container direction="column">
-    //   <Grid item container direction="row" xs={12} sm={12} md={12} lg={12} xl={12}>
-    //     <Grid item xs={0} sm={3} md={3} lg={3} xl={4}></Grid>
-    //     <Grid item xs={6} sm={6} md={6} lg={6} xl={4}>
-              
-    //           <WebcamCapture></WebcamCapture>
-    //     </Grid>
-    //     <Grid item xs={3} sm={3} md={3} lg={3} xl={4}></Grid>
-    //   </Grid>
-    // </Grid>
-    <Grid container>
-      <WebcamCapture></WebcamCapture>
-    </Grid>
+      <Container>
+        <Grid container>
+          <Grid item xs={0} sm={2} md={3} lg={4} xl={4}></Grid>
+          <Grid item xs={12} sm={8} md={6} lg={4} xl={4}>
+                <WebcamCapture></WebcamCapture>
+          </Grid>
+          <Grid item xs={0} sm={2} md={3} lg={4} xl={4}></Grid>
+        </Grid>
+      </Container>
   );
 }
 

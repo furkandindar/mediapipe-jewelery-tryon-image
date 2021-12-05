@@ -48,8 +48,10 @@ function App() {
 
   return (
         <Grid container>
-          <Grid item>
+          <Grid item xs={6}>
                 <WebcamCapture></WebcamCapture>
+          </Grid>
+          <Grid item xs={6} style={{background:"red"}}>
           </Grid>
         </Grid>
   );

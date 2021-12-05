@@ -48,10 +48,8 @@ function App() {
 
   return (
         <Grid container>
-          <Grid item xs={6}>
-                <WebcamCapture></WebcamCapture>
-          </Grid>
-          <Grid item xs={6} style={{background:"red"}}>
+          <Grid item xs={12} style={{background:"green"}}>
+            <h1>hello world, it's Furkan and this must be responsive</h1>
           </Grid>
         </Grid>
   );

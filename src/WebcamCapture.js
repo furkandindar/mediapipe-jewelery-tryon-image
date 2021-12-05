@@ -54,6 +54,7 @@ function WebcamCapture() {
         <div>
             <div className={`webcamCapture ${image ? "hide" : ""}`}>
                 <Webcam
+                    className="webcam"
                     ref={webcamRef}
                     audio={false}
                     screenshotFormat="image/jpeg"

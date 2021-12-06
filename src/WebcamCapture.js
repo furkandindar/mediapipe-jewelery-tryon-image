@@ -35,7 +35,7 @@ const Model = () => {
 
 const videoConstraints = {
     width:900,
-    height:600,
+    height:560,
     facingMode: "environment",
 }
 

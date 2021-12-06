@@ -14,9 +14,9 @@ const Model = () => {
     useFrame((state, delta) => {
       ref.current.position.x = (landmark_x - 0.5)*5;
       ref.current.position.y = -(landmark_y - 0.5)*8;
-      ref.current.scale.x = scale*20;
-      ref.current.scale.y = scale*20;
-      ref.current.scale.z = scale*20;
+      ref.current.scale.x = scale*33;
+      ref.current.scale.y = scale*33;
+      ref.current.scale.z = scale*33;
     })
 
         return (

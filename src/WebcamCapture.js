@@ -6,7 +6,7 @@ import "./WebcamCapture.css";
 import {Hands} from "@mediapipe/hands";
 import {useLoader, useFrame, Canvas, render} from "@react-three/fiber";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 
 const Model = () => {
     //
@@ -15,7 +15,7 @@ const Model = () => {
   
     useFrame((state, delta) => {
       ref.current.position.x = (landmark_x - 0.5)*5;
-      ref.current.position.y = -(landmark_y - 0.5)*15;
+      ref.current.position.y = -(landmark_y - 0.5)*8;
       ref.current.scale.x = scale*33;
       ref.current.scale.y = scale*33;
       ref.current.scale.z = scale*33;
@@ -127,7 +127,6 @@ function WebcamCapture() {
                     <Suspense fallback={null}>
                     <Model position={[-100,-100,-3]}></Model>
                     <Environment preset="studio"></Environment>
-                    <OrbitControls></OrbitControls>
                     </Suspense>
                 </Canvas> 
                 <CloseIcon 

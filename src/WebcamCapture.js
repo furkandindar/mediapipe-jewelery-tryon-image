@@ -14,8 +14,8 @@ const Model = () => {
     const ref = useRef();
   
     useFrame((state, delta) => {
-      ref.current.position.x = (landmark_x - 0.5)*5;
-      ref.current.position.y = -(landmark_y - 0.5)*8;
+      ref.current.position.x = (landmark_x - 0.5)*4.75;
+      ref.current.position.y = -(landmark_y - 0.5)*8.50;
       ref.current.scale.x = scale*33;
       ref.current.scale.y = scale*33;
       ref.current.scale.z = scale*33;
@@ -114,6 +114,7 @@ function WebcamCapture() {
                     videoConstraints={videoConstraints}
                     width={videoConstraints.width}
                     height={videoConstraints.height}
+                    screenshotQuality={1}
                 />
                 <RadioButtonUncheckedIcon
                     className="webcamCapture__CaptureButton"

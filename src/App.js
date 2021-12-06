@@ -48,9 +48,11 @@ function App() {
 
   return (
         <Grid container>
-          <Grid item xs={12} sm={8} md={6} lg={6} xl={6} style={{background:"green"}}>
+          <Grid item xs={0} sm={0} md={2} lg={3} xl={4}/>
+          <Grid item xs={12} sm={12} md={8} lg={6} xl={4}>
             <WebcamCapture/>
           </Grid>
+          <Grid item xs={0} sm={0} md={2} lg={3} xl={4}/>
         </Grid>
   );
 }

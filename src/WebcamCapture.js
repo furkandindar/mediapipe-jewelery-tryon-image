@@ -4,7 +4,7 @@ import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import CloseIcon from '@mui/icons-material/Close';
 import "./WebcamCapture.css";
 import {Hands} from "@mediapipe/hands";
-import {useLoader, useFrame, Canvas} from "@react-three/fiber";
+import {useLoader, useFrame, Canvas, render} from "@react-three/fiber";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 
 const Model = () => {
@@ -12,22 +12,30 @@ const Model = () => {
     const ref = useRef();
   
     useFrame((state, delta) => {
-      //ref.current.position.x = (landmark_x - 0.5)*7.5;
-      //ref.current.position.y = -(landmark_y - 0.5)*10;
+      ref.current.position.x = (landmark_x - 0.5)*4.5;
+      ref.current.position.y = -(landmark_y - 0.5)*8;
+      ref.current.scale.x = scale*33;
+      ref.current.scale.y = scale*33;
+      ref.current.scale.z = scale*33;
     })
-  
-    return (
-      <>
-        <primitive ref={ref} object={glb.scene} scale={5}></primitive>
-      </>
-    );
+
+        return (
+            <>
+              <primitive ref={ref} object={glb.scene} scale={5}></primitive>
+            </>
+          );
+    
   
   };
   
   var landmark_x = -100;
   var landmark_y = -100;
+  var scale = 0.1;
+  var renderFlag=false;
 
 const videoConstraints = {
+    width:250,
+    height:400,
     facingMode: "environment",
 }
 
@@ -46,7 +54,50 @@ function WebcamCapture() {
 
     const resetImg = useCallback(() => {
         setImage(null);
+        renderFlag=false;
     }, [webcamRef]);
+
+    function onResults(results){
+      canvasRef.current.width = imgRef.current.width;
+      canvasRef.current.height = imgRef.current.height;
+      console.log(results);
+
+      console.log(imgRef);
+      console.log(canvasRef);
+      if (results.multiHandLandmarks) {
+        for (const landmarks of results.multiHandLandmarks) {
+          if (landmarks[14].x !== "undefined") {
+            landmark_x = (landmarks[14].x + landmarks[13].x)/2;
+            console.log(landmark_x);
+            renderFlag=true;
+            landmark_y = (landmarks[14].y + landmarks[13].y)/2;
+            //landmark_z = (landmarks[14].z + landmarks[13].z)/2;
+            scale = landmarks[13].y - landmarks[14].y;
+          }
+        }
+      }
+    }
+
+    useEffect(() => {
+      const hands = new Hands({
+        locateFile:(file) =>{
+          return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
+        }
+      });
+
+      hands.setOptions({
+        maxNumHands: 2,
+        modelComplexity: 1,
+        minDetectionConfidence: 0.5,
+        minTrackingConfidence: 0.5,
+      });
+
+      if (image) {
+        hands.onResults(onResults);
+
+        hands.send({image: imgRef.current});
+      }
+    });
 
 
 
@@ -59,6 +110,9 @@ function WebcamCapture() {
                     audio={false}
                     screenshotFormat="image/jpeg"
                     videoConstraints={videoConstraints}
+                    width={videoConstraints.width}
+                    height={videoConstraints.height}
+                    forceScreenshotSourceSize={true}
                 />
                 <RadioButtonUncheckedIcon
                     className="webcamCapture__CaptureButton"
@@ -67,12 +121,12 @@ function WebcamCapture() {
                 />
             </div>
             <div className={`preview ${image ? "" : "hide"}`}>
-                <img ref={imgRef} src={image}></img>
-                {/* <Canvas ref={canvasRef}>
+                <img ref={imgRef} src={image} className="canvas"></img>
+                <Canvas ref={canvasRef} className="canvas" style={{width:"250px", height:"400px"}}>
                     <Suspense fallback={null}>
-                    <Model position={[0,0,-3]}></Model>
+                    <Model position={[-100,-100,-3]}></Model>
                     </Suspense>
-                </Canvas>  */}
+                </Canvas> 
                 <CloseIcon 
                     className="webcamCapture__CloseButton"
                     onClick= {resetImg}

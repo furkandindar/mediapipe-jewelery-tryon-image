@@ -8,6 +8,7 @@
     "@mediapipe/hands": "^0.4.1635986972",
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.2",
+    "@react-three/drei": "^7.26.1",
     "@react-three/fiber": "^7.0.21",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",

@@ -34,8 +34,8 @@ const Model = () => {
   var renderFlag=false;
 
 const videoConstraints = {
-    width:800,
-    height:500,
+    width:1200,
+    height:750,
     facingMode: "environment",
 }
 
@@ -47,7 +47,7 @@ function WebcamCapture() {
     console.log(imgRef);
 
     const capture = useCallback(() => {
-        const imageSource = webcamRef.current.getScreenshot({width: 250, height: 400});
+        const imageSource = webcamRef.current.getScreenshot({width: 375, height: 600});
         setImage(imageSource);
         console.log(imgRef);
     }, [webcamRef]);
@@ -121,7 +121,7 @@ function WebcamCapture() {
             </div>
             <div className={`preview ${image ? "" : "hide"}`}>
                 <img ref={imgRef} src={image} className="canvas"></img>
-                <Canvas ref={canvasRef} className="canvas" style={{width:"250px", height:"400px"}}>
+                <Canvas ref={canvasRef} className="canvas" style={{width:"375px", height:"600px"}}>
                     <Suspense fallback={null}>
                     <Model position={[-100,-100,-3]}></Model>
                     </Suspense>

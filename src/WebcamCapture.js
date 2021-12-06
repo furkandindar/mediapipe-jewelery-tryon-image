@@ -12,11 +12,11 @@ const Model = () => {
     const ref = useRef();
   
     useFrame((state, delta) => {
-      ref.current.position.x = (landmark_x - 0.5)*12;
+      ref.current.position.x = (landmark_x - 0.5)*5;
       ref.current.position.y = -(landmark_y - 0.5)*8;
-      ref.current.scale.x = scale*33;
-      ref.current.scale.y = scale*33;
-      ref.current.scale.z = scale*33;
+      ref.current.scale.x = scale*20;
+      ref.current.scale.y = scale*20;
+      ref.current.scale.z = scale*20;
     })
 
         return (
@@ -47,7 +47,7 @@ function WebcamCapture() {
     console.log(imgRef);
 
     const capture = useCallback(() => {
-        const imageSource = webcamRef.current.getScreenshot({width: 500, height: 800});
+        const imageSource = webcamRef.current.getScreenshot({width: 250, height: 400});
         setImage(imageSource);
         console.log(imgRef);
     }, [webcamRef]);
@@ -121,7 +121,7 @@ function WebcamCapture() {
             </div>
             <div className={`preview ${image ? "" : "hide"}`}>
                 <img ref={imgRef} src={image} className="canvas"></img>
-                <Canvas ref={canvasRef} className="canvas" style={{width:"500px", height:"800px"}}>
+                <Canvas ref={canvasRef} className="canvas" style={{width:"250px", height:"400px"}}>
                     <Suspense fallback={null}>
                     <Model position={[-100,-100,-3]}></Model>
                     </Suspense>

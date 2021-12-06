@@ -48,7 +48,7 @@ function App() {
 
   return (
         <Grid container>
-          <Grid item>
+          <Grid item xs={12} sm={12}>
             <WebcamCapture/>
           </Grid>
         </Grid>

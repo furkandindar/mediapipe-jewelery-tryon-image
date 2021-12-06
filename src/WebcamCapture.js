@@ -12,7 +12,7 @@ const Model = () => {
     const ref = useRef();
   
     useFrame((state, delta) => {
-      ref.current.position.x = (landmark_x - 0.5)*4.5;
+      ref.current.position.x = (landmark_x - 0.5)*12;
       ref.current.position.y = -(landmark_y - 0.5)*8;
       ref.current.scale.x = scale*33;
       ref.current.scale.y = scale*33;
@@ -34,8 +34,8 @@ const Model = () => {
   var renderFlag=false;
 
 const videoConstraints = {
-    width:400,
-    height:250,
+    width:800,
+    height:500,
     facingMode: "environment",
 }
 
@@ -122,7 +122,7 @@ function WebcamCapture() {
             </div>
             <div className={`preview ${image ? "" : "hide"}`}>
                 <img ref={imgRef} src={image} className="canvas"></img>
-                <Canvas ref={canvasRef} className="canvas" style={{width:"400px", height:"250px"}}>
+                <Canvas ref={canvasRef} className="canvas" style={{width:"800px", height:"500px"}}>
                     <Suspense fallback={null}>
                     <Model position={[-100,-100,-3]}></Model>
                     </Suspense>

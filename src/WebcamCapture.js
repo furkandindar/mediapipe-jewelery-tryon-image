@@ -6,17 +6,19 @@ import "./WebcamCapture.css";
 import {Hands} from "@mediapipe/hands";
 import {useLoader, useFrame, Canvas, render} from "@react-three/fiber";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
+import { Environment } from "@react-three/drei";
 
 const Model = () => {
-    const glb = useLoader(GLTFLoader, "https://3dfoodmodel-modelviewer.s3.amazonaws.com/assets/Bolle/Nevada_Blue/BolleNevada_Blue_v1.glb");
+    //
+    const glb = useLoader(GLTFLoader, "https://ttb-dev.s3.amazonaws.com/RingTransformed.glb");
     const ref = useRef();
   
     useFrame((state, delta) => {
       ref.current.position.x = (landmark_x - 0.5)*5;
-      ref.current.position.y = -(landmark_y - 0.5)*8;
-      ref.current.scale.x = scale*33;
-      ref.current.scale.y = scale*33;
-      ref.current.scale.z = scale*33;
+      ref.current.position.y = -(landmark_y - 0.5)*2;
+      ref.current.scale.x = scale*25;
+      ref.current.scale.y = scale*25;
+      ref.current.scale.z = scale*25;
     })
 
         return (

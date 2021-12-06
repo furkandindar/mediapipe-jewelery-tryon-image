@@ -123,9 +123,8 @@ function WebcamCapture() {
                 />
             </div>
             <div className={`preview ${image ? "" : "hide"}`}>
-                <img ref={imgRef} src={image} className="canvas" width={videoConstraints.width}
-                    height={videoConstraints.height}></img>
-                <Canvas ref={canvasRef} className="canvas" style={{width:videoConstraints.width, height:videoConstraints.height}}>
+                <img ref={imgRef} src={image} className="canvas"></img>
+                <Canvas ref={canvasRef} className="canvas" style={{width:"375px", height:"600px"}}>
                     <Suspense fallback={null}>
                     <Model position={[-100,-100,-3]}></Model>
                     <Environment preset="studio"></Environment>

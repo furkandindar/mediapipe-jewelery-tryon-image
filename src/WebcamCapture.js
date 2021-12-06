@@ -47,7 +47,7 @@ function WebcamCapture() {
     console.log(imgRef);
 
     const capture = useCallback(() => {
-        const imageSource = webcamRef.current.getScreenshot({width: 800, height: 500});
+        const imageSource = webcamRef.current.getScreenshot({width: 500, height: 800});
         setImage(imageSource);
         console.log(imgRef);
     }, [webcamRef]);

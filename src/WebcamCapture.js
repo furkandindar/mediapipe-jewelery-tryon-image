@@ -47,7 +47,7 @@ function WebcamCapture() {
     console.log(imgRef);
 
     const capture = useCallback(() => {
-        const imageSource = webcamRef.current.getScreenshot();
+        const imageSource = webcamRef.current.getScreenshot({width: 800, height: 500});
         setImage(imageSource);
         console.log(imgRef);
     }, [webcamRef]);
@@ -112,7 +112,6 @@ function WebcamCapture() {
                     videoConstraints={videoConstraints}
                     width={videoConstraints.width}
                     height={videoConstraints.height}
-                    forceScreenshotSourceSize={true}
                 />
                 <RadioButtonUncheckedIcon
                     className="webcamCapture__CaptureButton"

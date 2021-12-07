@@ -93,9 +93,9 @@ function WebcamCapture() {
       });
 
       if (image) {
-        hands.onResults(onResults);
+        // hands.onResults(onResults);
 
-        hands.send({image: imgRef.current});
+        // hands.send({image: imgRef.current});
       }
     });
 
@@ -119,14 +119,14 @@ function WebcamCapture() {
                     fontSize = "large"
                 />
             </div>
-            <div className={`preview ${image ? "" : "hide"}`} style={{background:"green"}}>
-                <img ref={imgRef} src={image} className="canvas"></img>
-                <Canvas ref={canvasRef} className="canvas" style={{width:"640px", height:"480px"}}>
+            <div className={`preview ${image ? "" : "hide"}`}>
+                <img ref={imgRef} src={image}></img>
+                {/* <Canvas ref={canvasRef} style={{width:"640px", height:"480px", position:"absolute"}}>
                     <Suspense fallback={null}>
                     <Model position={[-100,-100,-3]}></Model>
                     <Environment preset="studio"></Environment>
                     </Suspense>
-                </Canvas> 
+                </Canvas>  */}
                 <CloseIcon 
                     className="webcamCapture__CloseButton"
                     onClick= {resetImg}

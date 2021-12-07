@@ -10,6 +10,10 @@
     justify-content: center;
 }
 
+.canvas-wrapper{
+    position: relative;
+}
+
 .hide{
     display: none;
 }
@@ -24,7 +28,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    color: red;
+    color: white;
 }
 
 .webcamCapture__CloseButton{
@@ -33,5 +37,5 @@
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    color: red;
+    color: white;
 }

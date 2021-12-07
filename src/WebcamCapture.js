@@ -4,7 +4,7 @@ import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import CloseIcon from '@mui/icons-material/Close';
 import "./WebcamCapture.css";
 import {Hands} from "@mediapipe/hands";
-import {useLoader, useFrame, Canvas, render} from "@react-three/fiber";
+import {useLoader, useFrame, Canvas} from "@react-three/fiber";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 import { Environment } from "@react-three/drei";
 
@@ -33,7 +33,7 @@ const Model = () => {
   var landmark_x = -100;
   var landmark_y = -100;
   var scale = 0.1;
-  var renderFlag=false;
+  //var renderFlag=false;
 
 const videoConstraints = {
     facingMode: "environment",
@@ -54,7 +54,7 @@ function WebcamCapture() {
 
     const resetImg = useCallback(() => {
         setImage(null);
-        renderFlag=false;
+        //renderFlag=false;
     }, [webcamRef]);
 
     function onResults(results){
@@ -69,7 +69,7 @@ function WebcamCapture() {
           if (landmarks[14].x !== "undefined") {
             landmark_x = (landmarks[14].x + landmarks[13].x)/2;
             console.log(landmark_x);
-            renderFlag=true;
+            //renderFlag=true;
             landmark_y = (landmarks[14].y + landmarks[13].y)/2;
             //landmark_z = (landmarks[14].z + landmarks[13].z)/2;
             scale = landmarks[13].y - landmarks[14].y;
@@ -120,8 +120,8 @@ function WebcamCapture() {
                 />
             </div>
             <div className={`preview ${image ? "" : "hide"}`}>
-                <img ref={imgRef} src={image} style={{width:"640px", height:"480px"}}></img>
-                <Canvas ref={canvasRef} style={{width:"640px", height:"480px", position:"absolute"}}>
+                <img ref={imgRef} src={image}></img>
+                <Canvas ref={canvasRef} style={{position:"absolute"}}>
                     <Suspense fallback={null}>
                     <Model position={[-100,-100,-3]}></Model>
                     <Environment preset="studio"></Environment>

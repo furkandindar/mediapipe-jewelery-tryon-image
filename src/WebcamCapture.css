@@ -24,7 +24,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    color: white;
+    color: red;
 }
 
 .webcamCapture__CloseButton{
@@ -33,5 +33,5 @@
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    color: white;
+    color: red;
 }

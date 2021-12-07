@@ -47,7 +47,7 @@ function WebcamCapture() {
     console.log(imgRef);
 
     const capture = useCallback(() => {
-        const imageSource = webcamRef.current.getScreenshot({width: 375, height: 600});
+        const imageSource = webcamRef.current.getScreenshot();
         setImage(imageSource);
         console.log(imgRef);
     }, [webcamRef]);
@@ -120,7 +120,7 @@ function WebcamCapture() {
             </div>
             <div className={`preview ${image ? "" : "hide"}`}>
                 <img ref={imgRef} src={image} className="canvas"></img>
-                <Canvas ref={canvasRef} className="canvas" style={{width:"375px", height:"600px"}}>
+                <Canvas ref={canvasRef} className="canvas" style={{width:"640px", height:"480px"}}>
                     <Suspense fallback={null}>
                     <Model position={[-100,-100,-3]}></Model>
                     <Environment preset="studio"></Environment>

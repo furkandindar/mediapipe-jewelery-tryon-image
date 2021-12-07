@@ -36,8 +36,8 @@ const Model = () => {
   var renderFlag=false;
 
 const videoConstraints = {
-    width:960,
-    height:540,
+    width:1150,
+    height:675,
     facingMode: "environment",
 }
 

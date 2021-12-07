@@ -120,7 +120,7 @@ function WebcamCapture() {
                 />
             </div>
             <div className={`preview ${image ? "" : "hide"}`}>
-                <img ref={imgRef} src={image}></img>
+                <img ref={imgRef} src={image} style={{width:"640px", height:"480px"}}></img>
                 <Canvas ref={canvasRef} style={{width:"640px", height:"480px", position:"absolute"}}>
                     <Suspense fallback={null}>
                     <Model position={[-100,-100,-3]}></Model>

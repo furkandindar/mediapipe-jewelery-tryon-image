@@ -14,8 +14,8 @@ const Model = () => {
     const ref = useRef();
   
     useFrame((state, delta) => {
-      ref.current.position.x = (landmark_x - 0.5)*4.75;
-      ref.current.position.y = -(landmark_y - 0.5)*8.50;
+      ref.current.position.x = (landmark_x - 0.5)*10;
+      ref.current.position.y = -(landmark_y - 0.5)*8;
       ref.current.scale.x = scale*33;
       ref.current.scale.y = scale*33;
       ref.current.scale.z = scale*33;
@@ -93,9 +93,9 @@ function WebcamCapture() {
       });
 
       if (image) {
-        // hands.onResults(onResults);
+        hands.onResults(onResults);
 
-        // hands.send({image: imgRef.current});
+        hands.send({image: imgRef.current});
       }
     });
 
@@ -121,12 +121,12 @@ function WebcamCapture() {
             </div>
             <div className={`preview ${image ? "" : "hide"}`}>
                 <img ref={imgRef} src={image}></img>
-                {/* <Canvas ref={canvasRef} style={{width:"640px", height:"480px", position:"absolute"}}>
+                <Canvas ref={canvasRef} style={{width:"640px", height:"480px", position:"absolute"}}>
                     <Suspense fallback={null}>
                     <Model position={[-100,-100,-3]}></Model>
                     <Environment preset="studio"></Environment>
                     </Suspense>
-                </Canvas>  */}
+                </Canvas> 
                 <CloseIcon 
                     className="webcamCapture__CloseButton"
                     onClick= {resetImg}

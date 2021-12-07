@@ -6,7 +6,7 @@ import WebcamCapture from "./WebcamCapture";
 function App() {
 
   return (
-        <Grid container>
+        <Grid container={true}>
           <Grid item xs={12} sm={12}>
             <WebcamCapture/>
           </Grid>

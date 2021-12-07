@@ -111,6 +111,7 @@ function WebcamCapture() {
                     screenshotFormat="image/jpeg"
                     videoConstraints={videoConstraints}
                     screenshotQuality={1}
+                    forceScreenshotSourceSize={true}
                 />
                 <RadioButtonUncheckedIcon
                     className="webcamCapture__CaptureButton"
@@ -118,7 +119,7 @@ function WebcamCapture() {
                     fontSize = "large"
                 />
             </div>
-            <div className={`preview ${image ? "" : "hide"}`}>
+            <div className={`preview ${image ? "" : "hide"}`} style={{background:"green"}}>
                 <img ref={imgRef} src={image} className="canvas"></img>
                 <Canvas ref={canvasRef} className="canvas" style={{width:"640px", height:"480px"}}>
                     <Suspense fallback={null}>

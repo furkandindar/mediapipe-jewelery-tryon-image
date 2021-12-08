@@ -14,11 +14,13 @@ const Model = () => {
     const ref = useRef();
   
     useFrame((state, delta) => {
+    //   ref.current.position.x = 0;
+    //   ref.current.position.y = 0;
       ref.current.position.x = (landmark_x - 0.5)*10;
       ref.current.position.y = -(landmark_y - 0.5)*8;
-      ref.current.scale.x = scale*33;
-      ref.current.scale.y = scale*33;
-      ref.current.scale.z = scale*33;
+      ref.current.scale.x = scale*40;
+      ref.current.scale.y = scale*40;
+      ref.current.scale.z = scale*40;
     })
 
         return (
